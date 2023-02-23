@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MilagrosoEhealth</string>
+    <string name="login_btn">Iniciar sesión</string>
+    <string name="email_text">Email: </string>
+    <string name="password_text">Contraseña: </string>
+</resources>
