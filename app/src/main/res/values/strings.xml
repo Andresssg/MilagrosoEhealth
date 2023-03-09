@@ -1,6 +1,22 @@
 <resources>
     <string name="app_name">MilagrosoEhealth</string>
+    <string name="welcome_text">Bienvenido nuevamente!</string>
     <string name="login_btn">Iniciar sesión</string>
-    <string name="email_text">Email: </string>
-    <string name="password_text">Contraseña: </string>
+    <string name="documento_hint">Ingrese su documento</string>
+    <string name="password_hint">Ingrese su contraseña</string>
+    <string name="forgot">Recuperar contraseña</string>
+    <string-array name="rol">
+        <item>Seleccione su rol...</item>
+        <item>Paciente</item>
+        <item>Doctor</item>
+    </string-array>
+    <string name="title_activity_doctor_view">DoctorViewActivity</string>
+    <string name="hello_blank_fragment">TODO: Profile</string>
+    <string name="tab_profile">Profile</string>
+    <string name="tab_patients">Patients</string>
+    <string name="all_btn_text">Todos</string>
+    <string name="diabetes_btn_text">Diabetes</string>
+    <string name="hipertension_btn_text">Hipertensión</string>
+    <string name="cardiaca_btn_text">Insuficiencia Cardiaca</string>
+
 </resources>

@@ -12,7 +12,15 @@
         android:theme="@style/Theme.MilagrosoEhealth"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".PatientInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorViewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_doctor_view"
+            android:theme="@style/Theme.MilagrosoEhealth.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
