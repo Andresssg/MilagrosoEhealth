@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PatientInfoActivity">
+    android:visibility="visible"
+    tools:context=".PatientInfoActivity"
+    tools:visibility="visible">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,31 +29,32 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="45dp"
+                    android:layout_marginTop="40dp"
                     android:layout_marginEnd="16dp"
                     android:text="Nombre"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.198"
-                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintHorizontal_bias="0.185"
+                    app:layout_constraintStart_toEndOf="@+id/profileimg"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/profileimg"
+                    android:layout_width="113dp"
+                    android:layout_height="115dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
+                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.016"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.529"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    app:srcCompat="@drawable/profile"
+                    tools:srcCompat="@drawable/profile" />
 
                 <TextView
                     android:id="@+id/document_text"
@@ -64,7 +67,7 @@
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.154"
-                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintStart_toEndOf="@+id/profileimg"
                     app:layout_constraintTop_toBottomOf="@+id/name_text" />
 
                 <TextView
@@ -79,7 +82,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.163"
-                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintStart_toEndOf="@+id/profileimg"
                     app:layout_constraintTop_toBottomOf="@+id/document_text"
                     app:layout_constraintVertical_bias="0.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,9 +31,7 @@ public class ListAdapter extends ArrayAdapter<Patient> {
         }
 
         TextView name = (TextView) view.findViewById(R.id.name);
-        TextView illnessess = (TextView) view.findViewById(R.id.illnessess);
         name.setText(patient.getNombres().toString());
-        illnessess.setText(patient.printIllnesses());
         return view;
     }
 }
