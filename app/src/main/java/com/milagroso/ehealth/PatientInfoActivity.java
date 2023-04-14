@@ -18,14 +18,14 @@ public class PatientInfoActivity extends AppCompatActivity {
 
         TextView fullname = (TextView) findViewById(R.id.fullName_text);
         TextView direccion1 = (TextView) findViewById(R.id.direccion_text);
-        TextView direccion2 = (TextView) findViewById(R.id.address_text);
+        TextView direccion2 = (TextView) findViewById(R.id.email_text);
         TextView documento = (TextView) findViewById(R.id.document_text);
         TextView edad = (TextView) findViewById(R.id.age_text);
-        TextView email = (TextView) findViewById(R.id.email_text);
+        TextView email = (TextView) findViewById(R.id.birth_text);
         TextView enfermedades = (TextView) findViewById(R.id.illness_text);
-        TextView genero = (TextView) findViewById(R.id.gender_text);
+        TextView genero = (TextView) findViewById(R.id.speciality_text);
         TextView nombre = (TextView) findViewById(R.id.name_text);
-        TextView telefono = (TextView) findViewById(R.id.phone_text);
+        TextView telefono = (TextView) findViewById(R.id.hospital_text);
 
         fullname.setText(patient.getNombres() + " " + patient.getApellidos());
         direccion1.setText(patient.getDireccion());

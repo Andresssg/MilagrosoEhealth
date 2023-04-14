@@ -110,11 +110,15 @@ public class LoginActivity extends AppCompatActivity {
                             DocumentSnapshot document = queryDocumentSnapshots.getDocuments().get(0);
                             String dbPassword = (String) document.get("password");
                             if (password.equals(dbPassword)) {
-                                Doctor doctor = new Doctor((String) document.get("documento"),
-                                        (String) document.get("nombres"),
-                                        (String) document.get("apellidos"),
-                                        (ArrayList<Patient>) Patient.arrayHMToArrayPatient((ArrayList<HashMap>) document.get("pacientes"))
-                                );
+                                Doctor doctor = new Doctor(document.get("nombres").toString(),
+                                        document.get("apellidos").toString(),
+                                        document.get("documento").toString(),
+                                        (ArrayList<Patient>) Patient.arrayHMToArrayPatient((ArrayList<HashMap>) document.get("pacientes")),
+                                        Integer.parseInt(document.get("edad").toString()),
+                                        document.get("especialidad").toString(),
+                                        document.get("fecha_nacimiento").toString(),
+                                        document.get("password").toString(),
+                                        document.get("email").toString());
                                 Toast.makeText(context, "!Bienvenido " + doctor.getNombres() + "¡", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(this, DoctorViewActivity.class);
                                 intent.putExtra("DOCTOR", doctor);

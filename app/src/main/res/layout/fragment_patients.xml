@@ -5,21 +5,19 @@
     android:layout_height="match_parent"
     tools:context="com.milagroso.fragments.PatientsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <ScrollView
+    <HorizontalScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fillViewport="true"
         android:orientation="horizontal"
-        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -32,7 +30,7 @@
                 android:text="@string/all_btn_text"
                 android:textSize="11sp"
                 app:cornerRadius="30dp"
-
+                android:layout_margin="5dp"
                 />
 
             <Button
@@ -44,7 +42,7 @@
                 android:text="@string/diabetes_btn_text"
                 android:textSize="11sp"
                 app:cornerRadius="30dp"
-
+                android:layout_margin="5dp"
                 />
 
             <Button
@@ -56,23 +54,23 @@
                 android:text="@string/hipertension_btn_text"
                 android:textSize="11sp"
                 app:cornerRadius="30dp"
-
+                android:layout_margin="5dp"
                 />
 
             <Button
                 android:id="@+id/cardiaca_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="@string/cardiaca_btn_text"
                 android:textSize="11sp"
                 app:cornerRadius="30dp"
-
+                android:layout_margin="5dp"
                 />
 
         </LinearLayout>
-    </ScrollView>
+    </HorizontalScrollView>
 
     <ListView
         android:id="@+id/listview"

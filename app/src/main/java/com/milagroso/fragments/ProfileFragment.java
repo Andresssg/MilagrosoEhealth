@@ -7,8 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.milagroso.ehealth.R;
+import com.milagroso.models.Doctor;
+
+import org.w3c.dom.Text;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,7 +65,44 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        Doctor doctor = (Doctor) getActivity().getIntent().getSerializableExtra("DOCTOR");
+
+        TextView name = (TextView) view.findViewById(R.id.fullName_text);
+        TextView speciality = (TextView) view.findViewById(R.id.speciality_text);
+        TextView age = (TextView) view.findViewById(R.id.age_text);
+        TextView birthDate = (TextView) view.findViewById(R.id.birth_text);
+        TextView email = (TextView) view.findViewById(R.id.email_text);
+        TextView password = (TextView) view.findViewById(R.id.password_text);
+
+        name.setText(doctor.getNombres() + " " + doctor.getApellidos());
+        speciality.setText(doctor.getSpeciality());
+        age.setText(Integer.toString(doctor.getAge()));
+        birthDate.setText(doctor.getBirthDate());
+        email.setText(doctor.getEmail());
+        password.setText(doctor.getPassword());
+
+        ImageView visibilityOn = view.findViewById(R.id.visibility_on);
+        ImageView visibilityOff = view.findViewById(R.id.visibility_off);
+        visibilityOn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                password.setInputType(View.AUTOFILL_TYPE_TEXT);
+                visibilityOn.setVisibility(View.INVISIBLE);
+                visibilityOff.setVisibility(View.VISIBLE);
+            }
+        });
+
+        visibilityOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //129 TO SET INPUT TYPE TO PASSWORD
+                password.setInputType(129);
+                visibilityOff.setVisibility(View.INVISIBLE);
+                visibilityOn.setVisibility(View.VISIBLE);
+            }
+        });
+
+        return view;
     }
 }

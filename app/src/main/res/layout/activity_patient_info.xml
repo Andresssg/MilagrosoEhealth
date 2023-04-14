@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/basicInfo_cardview"
+            android:id="@+id/photo_cardview"
             android:layout_width="409dp"
             android:layout_height="200dp"
             tools:layout_editor_absoluteX="1dp"
@@ -90,7 +90,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/patientInformation_cardview"
+            android:id="@+id/personalInfo_cardview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -137,7 +137,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/title_information" />
 
                 <TextView
-                    android:id="@+id/gender_label"
+                    android:id="@+id/speciality_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -148,7 +148,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/fullName_label" />
 
                 <TextView
-                    android:id="@+id/gender_text"
+                    android:id="@+id/speciality_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="45dp"
@@ -157,7 +157,7 @@
                     android:text="TextView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.454"
-                    app:layout_constraintStart_toEndOf="@+id/gender_label"
+                    app:layout_constraintStart_toEndOf="@+id/speciality_label"
                     app:layout_constraintTop_toBottomOf="@+id/fullName_text" />
 
                 <TextView
@@ -169,7 +169,7 @@
                     android:text="Edad: "
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/gender_label" />
+                    app:layout_constraintTop_toBottomOf="@+id/speciality_label" />
 
                 <TextView
                     android:id="@+id/age_text"
@@ -181,10 +181,10 @@
                     android:text="TextView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/age_label"
-                    app:layout_constraintTop_toBottomOf="@+id/gender_text" />
+                    app:layout_constraintTop_toBottomOf="@+id/speciality_text" />
 
                 <TextView
-                    android:id="@+id/email_label"
+                    android:id="@+id/birth_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -195,7 +195,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/age_label" />
 
                 <TextView
-                    android:id="@+id/email_text"
+                    android:id="@+id/birth_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="55dp"
@@ -204,11 +204,11 @@
                     android:text="TextView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/email_label"
+                    app:layout_constraintStart_toEndOf="@+id/birth_label"
                     app:layout_constraintTop_toBottomOf="@+id/age_text" />
 
                 <TextView
-                    android:id="@+id/phone_label"
+                    android:id="@+id/hospital_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -216,10 +216,10 @@
                     android:text="Telefono:"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/email_label" />
+                    app:layout_constraintTop_toBottomOf="@+id/birth_label" />
 
                 <TextView
-                    android:id="@+id/phone_text"
+                    android:id="@+id/hospital_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="38dp"
@@ -228,11 +228,11 @@
                     android:text="TextView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/phone_label"
-                    app:layout_constraintTop_toBottomOf="@+id/email_text" />
+                    app:layout_constraintStart_toEndOf="@+id/hospital_label"
+                    app:layout_constraintTop_toBottomOf="@+id/birth_text" />
 
                 <TextView
-                    android:id="@+id/address_label"
+                    android:id="@+id/email_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -240,10 +240,10 @@
                     android:text="Direccion:"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/phone_label" />
+                    app:layout_constraintTop_toBottomOf="@+id/hospital_label" />
 
                 <TextView
-                    android:id="@+id/address_text"
+                    android:id="@+id/email_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="33dp"
@@ -251,8 +251,8 @@
                     android:layout_marginEnd="20dp"
                     android:text="TextView"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/address_label"
-                    app:layout_constraintTop_toBottomOf="@+id/phone_text" />
+                    app:layout_constraintStart_toEndOf="@+id/email_label"
+                    app:layout_constraintTop_toBottomOf="@+id/hospital_text" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
