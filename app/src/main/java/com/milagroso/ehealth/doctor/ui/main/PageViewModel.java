@@ -1,4 +1,4 @@
-package com.milagroso.ehealth.ui.main;
+package com.milagroso.ehealth.doctor.ui.main;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

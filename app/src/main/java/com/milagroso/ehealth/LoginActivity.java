@@ -13,10 +13,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.milagroso.ehealth.doctor.DoctorViewActivity;
+import com.milagroso.ehealth.patient.PatientViewActivity;
 import com.milagroso.models.Doctor;
 import com.milagroso.models.Illness;
 import com.milagroso.models.Patient;
@@ -76,16 +77,19 @@ public class LoginActivity extends AppCompatActivity {
                                 Patient patient = new Patient(
                                         (String) document.get("apellidos"),
                                         (String) document.get("direccion"),
-                                        (String) document.get("documentoId"),
-                                        (Integer) document.get("edad"),
+                                        (String) document.get("documento"),
+                                        Integer.parseInt(document.get("edad").toString()),
                                         (String) document.get("email"),
-                                        (ArrayList<Illness>) document.get("enfermedades"),
+                                        Illness.arrayHMToArrayIllness((ArrayList<HashMap>) document.get("enfermedades")),
                                         (String) document.get("genero"),
                                         (String) document.get("nombres"),
                                         (String) document.get("telefono")
                                 );
                                 Toast.makeText(context, "!Bienvenido " + patient.getNombres() + "¡", Toast.LENGTH_SHORT).show();
                                 //TODO:Make intent for patientactivity
+                                Intent intent = new Intent(this, PatientViewActivity.class);
+                                intent.putExtra("PATIENT", patient);
+                                startActivity(intent);
                             } else {
                                 Toast.makeText(context, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
                             }
@@ -117,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
                                         Integer.parseInt(document.get("edad").toString()),
                                         document.get("especialidad").toString(),
                                         document.get("fecha_nacimiento").toString(),
-                                        document.get("password").toString(),
+                                        dbPassword,
                                         document.get("email").toString());
                                 Toast.makeText(context, "!Bienvenido " + doctor.getNombres() + "¡", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(this, DoctorViewActivity.class);

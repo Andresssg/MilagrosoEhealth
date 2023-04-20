@@ -18,5 +18,7 @@
     <string name="diabetes_btn_text">Diabetes</string>
     <string name="hipertension_btn_text">Hipertensión</string>
     <string name="cardiaca_btn_text">Insuficiencia Cardiaca</string>
+    <string name="title_activity_patient_view">PatientViewActivity</string>
+    <string name="tab_vital_signs">Signos Vitales</string>
 
 </resources>

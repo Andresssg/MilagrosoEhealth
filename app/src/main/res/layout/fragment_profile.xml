@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:visibility="visible"
-    tools:context="com.milagroso.fragments.ProfileFragment"
+    tools:context="com.milagroso.fragments.ProfileDoctorFragment"
     tools:visibility="visible">
 
     <LinearLayout

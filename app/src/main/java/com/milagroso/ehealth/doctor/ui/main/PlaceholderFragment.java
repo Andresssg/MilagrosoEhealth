@@ -1,4 +1,4 @@
-package com.milagroso.ehealth.ui.main;
+package com.milagroso.ehealth.doctor.ui.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.milagroso.ehealth.R;
 import com.milagroso.ehealth.databinding.FragmentDoctorViewBinding;
 
 /**

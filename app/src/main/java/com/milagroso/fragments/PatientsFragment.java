@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.milagroso.adapters.ListAdapter;
-import com.milagroso.ehealth.DoctorViewActivity;
+import com.milagroso.ehealth.doctor.DoctorViewActivity;
 import com.milagroso.ehealth.PatientInfoActivity;
 import com.milagroso.ehealth.R;
 import com.milagroso.models.Doctor;
@@ -21,7 +21,6 @@ import com.milagroso.models.Illness;
 import com.milagroso.models.Patient;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PatientsFragment extends Fragment {
 

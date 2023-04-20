@@ -1,4 +1,4 @@
-package com.milagroso.ehealth.ui.main;
+package com.milagroso.ehealth.doctor.ui.main;
 
 import android.content.Context;
 
@@ -10,7 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.milagroso.ehealth.R;
 import com.milagroso.fragments.PatientsFragment;
-import com.milagroso.fragments.ProfileFragment;
+import com.milagroso.fragments.ProfileDoctorFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -33,7 +33,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Return a PlaceholderFragment (defined as a static inner class below).
         switch (position) {
             case 0:
-                return new ProfileFragment();
+                return new ProfileDoctorFragment();
             case 1:
                 return new PatientsFragment();
             default:
