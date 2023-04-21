@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.milagroso.ehealth.R;
+import com.milagroso.models.Doctor;
+import com.milagroso.models.Patient;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,7 +63,28 @@ public class ProfilePatientFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_patient, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile_patient, container, false);
+        Patient patient = (Patient) getActivity().getIntent().getSerializableExtra("PATIENT");
+
+
+        TextView fullname = (TextView) view.findViewById(R.id.fullName_text);
+        TextView direccion = (TextView) view.findViewById(R.id.address_text);
+        TextView documento = (TextView) view.findViewById(R.id.documentp_text);
+        TextView edad = (TextView) view.findViewById(R.id.age_text);
+        TextView email = (TextView) view.findViewById(R.id.email_text);
+        TextView enfermedades = (TextView) view.findViewById(R.id.illness_text);
+        TextView genero = (TextView) view.findViewById(R.id.gender_text);
+        TextView telefono = (TextView) view.findViewById(R.id.phone_text);
+
+        fullname.setText(patient.getNombres() + " " + patient.getApellidos());
+        direccion.setText(patient.getDireccion());
+        documento.setText(patient.getDocumentId());
+        edad.setText(Integer.toString(patient.getEdad()));
+        email.setText(patient.getEmail());
+        enfermedades.setText(patient.printIllnesses());
+        genero.setText(patient.getGenero());
+        telefono.setText(patient.getTelefono());
+
+        return view;
     }
 }
