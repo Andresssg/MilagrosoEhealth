@@ -14,7 +14,6 @@ public class PatientInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_info);
         Patient patient = (Patient) getIntent().getSerializableExtra("paciente");
-        System.out.println(patient.toString());
 
         TextView fullname = (TextView) findViewById(R.id.fullName_text);
         TextView direccion1 = (TextView) findViewById(R.id.direccion_text);
