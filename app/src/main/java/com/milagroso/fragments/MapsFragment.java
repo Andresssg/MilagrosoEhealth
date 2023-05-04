@@ -52,6 +52,8 @@ public class MapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
+            LatLng colombia = new LatLng(4.5709, -74.2973);
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(colombia, 4));
             UiSettings uiSettings = googleMap.getUiSettings();
             uiSettings.setZoomControlsEnabled(true);
             db = FirebaseFirestore.getInstance();
@@ -66,7 +68,6 @@ public class MapsFragment extends Fragment {
                         if (task.isSuccessful()) {
                             Map<String, DocumentSnapshot> locations = new HashMap<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                System.out.println(document.getData());
                                 String idPaciente = document.getString("idpaciente");
                                 if (!locations.containsKey(idPaciente)) {
                                     locations.put(idPaciente, document);
