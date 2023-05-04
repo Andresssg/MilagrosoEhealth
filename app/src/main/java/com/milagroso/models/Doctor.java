@@ -1,6 +1,7 @@
 package com.milagroso.models;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -69,6 +70,22 @@ public class Doctor implements Serializable {
 
     public String getEmail() {
         return email;
+    }
+
+    public ArrayList getPatientsIds() {
+        ArrayList<String> id = new ArrayList<String>();
+        for (Patient paciente : pacientes) {
+            id.add(paciente.getDocumentId());
+        }
+        return id;
+    }
+
+    public String searchPatient(String documentId) {
+        for (Patient patient : pacientes)
+
+            if (documentId.equals(patient.getDocumentId()))
+                return patient.getNombres() + " " + patient.getApellidos();
+        return "";
     }
 
     @Override
