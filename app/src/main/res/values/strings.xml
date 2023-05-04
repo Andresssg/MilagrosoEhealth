@@ -14,6 +14,7 @@
     <string name="hello_blank_fragment">TODO: Profile</string>
     <string name="tab_profile">Profile</string>
     <string name="tab_patients">Patients</string>
+    <string name="tab_location">Ubicación</string>
     <string name="all_btn_text">Todos</string>
     <string name="diabetes_btn_text">Diabetes</string>
     <string name="hipertension_btn_text">Hipertensión</string>
