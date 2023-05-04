@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,6 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.milagroso.ehealth.R;
@@ -58,12 +60,13 @@ public class MapsFragment extends Fragment {
             db.collection("Reportes")
                     .whereIn("idpaciente", patientsIds)
                     .whereEqualTo("emergencia", true)
-                    .orderBy("fecha")
+                    .orderBy("fecha", Query.Direction.DESCENDING)
                     .get()
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             Map<String, DocumentSnapshot> locations = new HashMap<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
+                                System.out.println(document.getData());
                                 String idPaciente = document.getString("idpaciente");
                                 if (!locations.containsKey(idPaciente)) {
                                     locations.put(idPaciente, document);
@@ -83,6 +86,8 @@ public class MapsFragment extends Fragment {
                                                 .target(position)
                                                 .zoom(12f)
                                                 .build();
+                                        String title = marker.getTitle();
+                                        Toast.makeText(getActivity().getApplicationContext(), title, Toast.LENGTH_SHORT).show();
 
                                         googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                                         return true;
