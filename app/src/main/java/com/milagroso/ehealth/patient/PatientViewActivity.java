@@ -17,6 +17,9 @@ public class PatientViewActivity extends AppCompatActivity {
     private ActivityPatientViewBinding binding;
     private Patient patient;
 
+    public static double latitude, longitude;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

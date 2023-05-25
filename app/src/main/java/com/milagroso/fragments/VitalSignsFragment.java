@@ -33,6 +33,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
 import com.milagroso.ehealth.R;
+import com.milagroso.ehealth.patient.PatientViewActivity;
 import com.milagroso.models.Patient;
 
 import java.util.Date;
@@ -114,6 +115,8 @@ public class VitalSignsFragment extends Fragment {
                 Location location = locationResult.getLastLocation();
                 latitude = location.getLatitude();
                 longitude = location.getLongitude();
+                PatientViewActivity.latitude = latitude;
+                PatientViewActivity.longitude = longitude;
             }
         };
         // Verifica si se tienen permisos de ubicación

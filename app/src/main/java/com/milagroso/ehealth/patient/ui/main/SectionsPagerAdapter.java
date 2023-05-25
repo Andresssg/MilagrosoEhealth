@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.milagroso.ehealth.R;
 import com.milagroso.ehealth.doctor.ui.main.PlaceholderFragment;
+import com.milagroso.fragments.MapsFragment;
 import com.milagroso.fragments.ProfilePatientFragment;
 import com.milagroso.fragments.VitalSignsFragment;
 
@@ -20,7 +21,7 @@ import com.milagroso.fragments.VitalSignsFragment;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_profile, R.string.tab_vital_signs};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_profile, R.string.tab_vital_signs, R.string.tab_location};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -37,6 +38,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return new ProfilePatientFragment();
             case 1:
                 return new VitalSignsFragment();
+            case 2:
+                return new MapsFragment();
             default:
                 return PlaceholderFragment.newInstance(position + 1);
         }
@@ -51,6 +54,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // Show 2 total pages.
-        return 2;
+        return 3;
     }
 }

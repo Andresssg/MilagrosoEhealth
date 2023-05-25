@@ -2,6 +2,7 @@ package com.milagroso.ehealth;
 
 import static android.content.ContentValues.TAG;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -13,8 +14,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.milagroso.ehealth.doctor.DoctorViewActivity;
 import com.milagroso.ehealth.patient.PatientViewActivity;
@@ -22,8 +26,10 @@ import com.milagroso.models.Doctor;
 import com.milagroso.models.Illness;
 import com.milagroso.models.Patient;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -31,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
     private String EXTRA_MESSAGE = "Bienvenido al portal médico";
     private FirebaseFirestore db;
     private Context context;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +91,6 @@ public class LoginActivity extends AppCompatActivity {
                                         (String) document.get("telefono")
                                 );
                                 Toast.makeText(context, "!Bienvenido " + patient.getNombres() + "¡", Toast.LENGTH_SHORT).show();
-                                //TODO:Make intent for patientactivity
                                 Intent intent = new Intent(this, PatientViewActivity.class);
                                 intent.putExtra("PATIENT", patient);
                                 startActivity(intent);
