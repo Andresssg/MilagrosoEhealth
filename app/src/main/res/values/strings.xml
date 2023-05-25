@@ -22,5 +22,7 @@
     <string name="title_activity_patient_view">PatientViewActivity</string>
     <string name="tab_vital_signs">Signos Vitales</string>
     <string name="vitalSign_btn_text">Crear reporte</string>
+    <string name="channel_name">test</string>
+    <string name="channel_description">description test</string>
 
 </resources>
