@@ -1,7 +1,6 @@
 package com.milagroso.fragments;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -59,6 +58,7 @@ public class ProfileDoctorFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
